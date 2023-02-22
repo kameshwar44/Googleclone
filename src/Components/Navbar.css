@@ -1,0 +1,21 @@
+.NavComponent {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  background-color: transparent;
+  padding: 0.7rem;
+  padding-bottom: 1rem;
+  font-size: larger;
+  float: right;
+  color: black;
+}
+
+.NavLinkComponent {
+  text-decoration: none;
+  color: black;
+  display: "flex";
+}
+.NavLinkComponentPublic{
+    font-size: x-large;
+    color: black;
+}

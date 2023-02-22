@@ -1,0 +1,59 @@
+.SearchBar {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  border-bottom: 1px solid #5f6368;
+}
+.google__Image {
+  width: 7%;
+  margin: 1%;
+  text-align: center;
+  margin-top: 10px;
+  
+}
+.Search__Input {
+  width: 36rem;
+  height: 44px;
+  margin-top: 19px;
+  margin-left: 20px;
+
+  
+ 
+}
+.searchPage_Options {
+  display: flex;
+  justify-content: space-evenly;
+  
+}
+.Allbtn {
+  margin: 5px;
+  font-size: small;
+  color: #5f6368;
+  
+}
+.Allbtn Link {
+  color: #5f6368;
+}
+
+.SearchPageResult_Link{
+    text-decoration: none;
+}
+.SearchPageResult_Title{
+    text-decoration: none;
+}
+
+.searchResult{
+    margin: 50px;
+}
+
+.search__results{
+    align-items: center;
+    display: flex;
+    align-items: center;
+    justify-content:start ;
+    margin-left: 50px;
+    
+}
+.Full_divSearch{
+    margin-left:120px;
+}
