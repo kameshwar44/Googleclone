@@ -1,70 +1,167 @@
-# Getting Started with Create React App
+# Google Search Clone
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A React-based Google search interface clone that uses the Google Custom Search API to provide real search functionality.
+
+## Features
+
+- 🔍 Real Google search using Custom Search API
+- 🎨 Responsive Google-like UI
+- 🔗 Working navigation between home and search pages
+- ⚡ Fast search results display
+- 🛡️ Secure API key management
+- ♿ Accessibility improvements
+- 🎯 Error handling and loading states
+
+## Prerequisites
+
+Before you begin, ensure you have:
+- Node.js (version 14 or higher)
+- npm or yarn package manager
+- A Google Custom Search API key
+- A Google Custom Search Engine ID
+
+## Setup Instructions
+
+### 1. Clone and Install
+
+```bash
+git clone <your-repo-url>
+cd my-app
+npm install
+```
+
+### 2. Configure Environment Variables
+
+1. Copy the example environment file:
+   ```bash
+   cp .env.example .env
+   ```
+
+2. Edit the `.env` file and add your Google API credentials:
+   ```
+   REACT_APP_GOOGLE_API_KEY=your_actual_api_key_here
+   REACT_APP_SEARCH_ENGINE_ID=your_actual_search_engine_id_here
+   ```
+
+### 3. Getting Google API Credentials
+
+#### Get Custom Search API Key:
+1. Go to [Google Cloud Console](https://console.cloud.google.com/)
+2. Create a new project or select existing one
+3. Enable the "Custom Search API"
+4. Create credentials (API Key)
+5. Copy the API key to your `.env` file
+
+#### Get Custom Search Engine ID:
+1. Go to [Google Programmable Search Engine](https://programmablesearchengine.google.com/)
+2. Create a new search engine
+3. Configure it to search the entire web
+4. Copy the Search Engine ID to your `.env` file
 
 ## Available Scripts
 
-In the project directory, you can run:
-
 ### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Runs the app in development mode at [http://localhost:3000](http://localhost:3000)
 
 ### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Launches the test runner in interactive watch mode
 
 ### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Builds the app for production to the `build` folder
 
 ### `npm run eject`
+**Note: This is a one-way operation!** Ejects from Create React App configuration.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Project Structure
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```
+src/
+├── Components/
+│   ├── HomeScreen.js          # Main search page (Google homepage clone)
+│   ├── HomeScreen.css         # Styles for home page
+│   ├── Navbar.js             # Navigation component
+│   ├── Navbar.css            # Navigation styles
+│   └── SearchScreen/
+│       ├── SearchScreen.js    # Search results page
+│       └── SearchScreen.css   # Search results styles
+├── App.js                     # Main app component with routing
+├── index.js                   # React app entry point
+└── StateProvider.js           # Context API setup (for future state management)
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Technologies Used
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- **React 18** - Frontend framework
+- **React Router** - Client-side routing
+- **Material-UI** - Icons and components
+- **Google Custom Search API** - Real search functionality
+- **Bootstrap Icons** - Additional icons
+- **Recoil** - State management (configured for future use)
 
-## Learn More
+## Features Explained
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Search Functionality
+- Real-time search using Google's Custom Search API
+- Proper error handling for API failures
+- Loading states during search operations
+- URL encoding for search queries
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### UI/UX Improvements
+- Responsive design that works on all devices
+- Google-accurate styling and layout
+- Proper accessibility attributes
+- Semantic HTML structure
 
-### Code Splitting
+### Security
+- API keys stored in environment variables
+- Secure external link handling
+- Input sanitization for search queries
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Environment Variables
 
-### Analyzing the Bundle Size
+The following environment variables are required:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+| Variable | Description | Required |
+|----------|-------------|----------|
+| `REACT_APP_GOOGLE_API_KEY` | Google Custom Search API key | Yes |
+| `REACT_APP_SEARCH_ENGINE_ID` | Google Custom Search Engine ID | Yes |
 
-### Making a Progressive Web App
+## Troubleshooting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### Search Not Working
+1. Verify your API keys are correct in the `.env` file
+2. Ensure the Custom Search API is enabled in Google Cloud Console
+3. Check that your search engine is configured to search the entire web
+4. Verify you haven't exceeded API quotas
 
-### Advanced Configuration
+### Build Issues
+1. Run `npm install` to ensure all dependencies are installed
+2. Clear cache with `npm start -- --reset-cache`
+3. Delete `node_modules` and `package-lock.json`, then run `npm install`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## Contributing
 
-### Deployment
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Test thoroughly
+5. Submit a pull request
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## License
 
-### `npm run build` fails to minify
+This project is for educational purposes. Please respect Google's trademarks and terms of service.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Deployment
+
+To deploy this application:
+
+1. Build the project: `npm run build`
+2. Deploy the `build` folder to your hosting service
+3. Ensure environment variables are set in your hosting environment
+4. Configure your hosting service to serve `index.html` for all routes (for client-side routing)
+
+Popular deployment options:
+- Netlify
+- Vercel
+- GitHub Pages
+- Heroku

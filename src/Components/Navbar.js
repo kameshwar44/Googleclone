@@ -4,22 +4,48 @@ import "./Navbar.css";
 
 function Navbar() {
   return (
-    <div className="NavComponent">
-    
-      <NavLink className="NavLinkComponent" to="https://mail.google.com/mail/">
-        <li>Gmail</li>
-      </NavLink>
-      <NavLink className="NavLinkComponent" to="/Images">
-        <li>Images</li>
-      </NavLink>
-      <NavLink className="NavLinkComponent" to="/about">
-        <li><i class="bi bi-grid-3x3-gap"></i></li>
-      </NavLink>
-      <NavLink className="NavLinkComponentPublic" to="/contact">
-        <li> <i class="bi bi-person-circle"></i></li>
-      </NavLink>
-   
-    </div>
+    <nav className="NavComponent" role="navigation" aria-label="Main navigation">
+      <ul style={{ listStyle: 'none', display: 'flex', gap: '1rem', margin: 0, padding: 0 }}>
+        <li>
+          <a 
+            className="NavLinkComponent" 
+            href="https://mail.google.com/mail/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Gmail"
+          >
+            Gmail
+          </a>
+        </li>
+        <li>
+          <NavLink 
+            className="NavLinkComponent" 
+            to="/images"
+            aria-label="Image search"
+          >
+            Images
+          </NavLink>
+        </li>
+        <li>
+          <NavLink 
+            className="NavLinkComponent" 
+            to="/apps"
+            aria-label="Google apps menu"
+          >
+            <i className="bi bi-grid-3x3-gap" aria-hidden="true"></i>
+          </NavLink>
+        </li>
+        <li>
+          <NavLink 
+            className="NavLinkComponentPublic" 
+            to="/account"
+            aria-label="User account"
+          >
+            <i className="bi bi-person-circle" aria-hidden="true"></i>
+          </NavLink>
+        </li>
+      </ul>
+    </nav>
   );
 }
 
